@@ -41,7 +41,7 @@ def str_length_validation(base_string, full_string, indices):
 if __name__ == '__main__':
     
     input_file = sys.argv[1]
-    output_file = sys.argv[2]
+    output_file = 'output.txt'
     
     # Open input file and determine base_string_X with its indices and base_string_Y with its indices
     txt = open(input_file, "r")
