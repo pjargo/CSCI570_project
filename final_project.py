@@ -5,6 +5,23 @@ Author: Luke Nelson, Peter Argo
 
 import sys
 
+delta = 30
+alphas = {('A', 'A'): 0, 
+         ('A', 'C'): 110, 
+         ('A', 'G'): 48, 
+         ('A', 'T'): 94, 
+         ('C', 'A'): 110, 
+         ('C', 'C'): 0, 
+         ('C', 'G'): 118, 
+         ('C', 'T'): 48, 
+         ('G', 'A'): 48, 
+         ('G', 'C'): 118, 
+         ('G', 'G'): 0, 
+         ('G', 'T'): 110, 
+         ('T', 'A'): 94, 
+         ('T', 'C'): 48, 
+         ('T', 'G'): 110, 
+         ('T', 'T'): 0}
 
 def string_generator(string: str, jk: list):
     """
@@ -38,6 +55,9 @@ def str_length_validation(base_string, full_string, indices):
         print('Validation Length: ', validation_length)
         
 def alignment(X, Y):
+    global delta
+    global alphas
+    
     # size of matrix n x m
     # Y -> has length 1, 2, ...j..., n   ----> Rows
     # X -> has length 1, 2, ...i..., m   ----> Cols
