@@ -36,6 +36,33 @@ def str_length_validation(base_string, full_string, indices):
         print('FALSE')
         print('Full String Length: ', full_str_length)
         print('Validation Length: ', validation_length)
+        
+def alignment(X, Y):
+    # size of matrix n x m
+    # Y -> has length 1, 2, ...j..., n   ----> Rows
+    # X -> has length 1, 2, ...i..., m   ----> Cols
+    n = len(Y)    # Rows
+    m = len(X)    # Cols
+
+    A = [ [ 0 for i in range(m) ] for j in range(n) ]    # Create empty array
+    
+    # Initialize A[i, 0] and A[0, j]
+    # Matrix access looks like A[row][column] = A[j][i]
+    for i in range(m):
+        A[0][i] = i * delta
+
+    for j in range(n):
+        A[j][0] = j * delta
+    
+    # Run recurrence
+    for j in range(n):
+        for i in range(m):
+
+            A[j][i] = min(alphas[(X[i], Y[j])] + A[j - 1][i - 1], 
+                         delta + A[j][i - 1], 
+                         delta + A[j - 1][i])
+    
+    return A[n - 1][m - 1]
 
 
 if __name__ == '__main__':
