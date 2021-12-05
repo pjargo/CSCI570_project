@@ -96,6 +96,7 @@ def str_length_validation(base_string, full_string, indices):
         print('Validation Length: ', validation_length)
         
 def alignment(X, Y):
+    
     global delta
     global alphas
     
@@ -105,25 +106,27 @@ def alignment(X, Y):
     n = len(Y)    # Rows
     m = len(X)    # Cols
 
-    A = [ [ 0 for i in range(m) ] for j in range(n) ]    # Create empty array
+    A = [ [ 0 for i in range(m + 1) ] for j in range(n + 1) ]    # Create empty array
     
     # Initialize A[i, 0] and A[0, j]
     # Matrix access looks like A[row][column] = A[j][i]
-    for i in range(m):
+    for i in range(m + 1):
         A[0][i] = i * delta
 
-    for j in range(n):
+    for j in range(n + 1):
         A[j][0] = j * delta
-    
-    # Run recurrence
-    for j in range(n)[1:]:
-        for i in range(m)[1:]:
 
-            A[j][i] = min(alphas[(X[i], Y[j])] + A[j - 1][i - 1], 
+    # Run recurrence
+    for j in range(n + 1)[1:]:
+        for i in range(m + 1)[1:]:
+
+            A[j][i] = min(alphas[(X[i - 1], Y[j - 1])] + A[j - 1][i - 1], 
                          delta + A[j][i - 1], 
                          delta + A[j - 1][i])
     
-    return A[n - 1][m - 1]
+    return (A[n][m], A)
+        
+
 
 
 if __name__ == '__main__':
