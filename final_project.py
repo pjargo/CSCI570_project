@@ -116,8 +116,8 @@ def alignment(X, Y):
         A[j][0] = j * delta
     
     # Run recurrence
-    for j in range(n):
-        for i in range(m):
+    for j in range(n)[1:]:
+        for i in range(m)[1:]:
 
             A[j][i] = min(alphas[(X[i], Y[j])] + A[j - 1][i - 1], 
                          delta + A[j][i - 1], 
