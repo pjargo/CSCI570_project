@@ -125,6 +125,23 @@ def alignment(X, Y):
                          delta + A[j - 1][i])
     
     return (A[n][m], A)
+
+def get_output(X, Y):
+    global output_file
+    
+    out_file = open(output_file,"w")
+
+    if len(X) <= 100:
+        out_file.write(X)
+        out_file.write('\n')
+        out_file.write(Y)
+    
+    else:  
+        out_file.write(X[:50] + ' ' + X[-50:])
+        out_file.write('\n')
+        out_file.write(Y[:50] + ' ' + Y[-50:])
+
+    out_file.close()
         
 
 
