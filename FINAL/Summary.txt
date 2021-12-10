@@ -1,0 +1,10 @@
+Summary of Results / Observations / Insights:
+We observed that the efficient version of the solution requires less memory than the basic version, yet it takes longer to run. 
+We learned that the efficient version runs in O(mn) time while using only O(m + n) space, whereas the basic version has a runtime and space requirement of O(mn).
+So the efficient version brings down the space requirement while increasing the running time by at most a constant factor. 
+During the course of this project and within our plots, we observed this to be true. The longer the strings we tested, the more apparent this became.
+Contributions:
+Peter and Luke both contributed to the project and shared the responsibilities related to coding, testing, and report preparation. 
+Luke performed the coding and testing for reading in the input.txt file and for implementing the basic version of the solution.
+Peter performed the coding and testing for the string generation and implementing the memory efficient version of the solution.
+Both of us worked together on the code for determining the memory requirements for each solution, creating the plots, and preparing the summary/report.
