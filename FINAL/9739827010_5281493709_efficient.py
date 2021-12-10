@@ -362,7 +362,7 @@ if __name__ == '__main__':
     sequence_align.get_output(output_file=output_file, X=final_stringx, Y=final_stringx,
                               alignment_cost=total_score, time_taken=time_taken, memory=memory)
 
-    print()
-    print("our solution for string 1(x): ", final_stringx[0:50], final_stringx[len(final_stringx)-50::])
-    print("our solution for string 1(y): ", final_stringy[0:50], final_stringy[len(final_stringx)-50::])
-    print(f"total alignment score for {input_file} data using dnc: ", sequence_align.get_total_score_dnc())
+    # print()
+    # print("our solution for string 1(x): ", final_stringx[0:50], final_stringx[len(final_stringx)-50::])
+    # print("our solution for string 1(y): ", final_stringy[0:50], final_stringy[len(final_stringx)-50::])
+    # print(f"total alignment score for {input_file} data using dnc: ", sequence_align.get_total_score_dnc())
