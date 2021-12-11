@@ -359,7 +359,7 @@ if __name__ == '__main__':
     heap_status_after = heap.heap()
     memory = (heap_status_after.size - heap_status_before.size) * 0.001
 
-    sequence_align.get_output(output_file=output_file, X=final_stringx, Y=final_stringx,
+    sequence_align.get_output(output_file=output_file, X=final_stringx, Y=final_stringy,
                               alignment_cost=total_score, time_taken=time_taken, memory=memory)
 
     # print()
